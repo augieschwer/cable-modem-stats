@@ -1,0 +1,8 @@
+services:
+  arris_stats:
+    image: ghcr.io/sarabveer/arris_cable_modem_stats:latest
+    container_name: arris_stats
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - modem_model=sb8200
