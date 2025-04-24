@@ -24,6 +24,8 @@ spec:
         - env:
             - name: modem_model
               value: sb8200
+            - name: influx_url
+              value: http://10.96.105.199
           image: ghcr.io/sarabveer/arris_cable_modem_stats:latest
           name: arris-stats
       restartPolicy: Always

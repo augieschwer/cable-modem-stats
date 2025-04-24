@@ -6,3 +6,4 @@ services:
     network_mode: host
     environment:
       - modem_model=sb8200
+      - influx_url=http://10.96.105.199
