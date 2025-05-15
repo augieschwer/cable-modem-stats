@@ -21,3 +21,9 @@ https://docs.influxdata.com/platform/install-and-deploy/deploying/kubernetes/
 helm repo add influxdata https://helm.influxdata.com/
 helm install myinfluxdb influxdata/influxdb2
 ```
+
+## Deploy
+
+```
+kubectl apply -f ./arris-stats-deployment.yaml
+```
