@@ -27,3 +27,14 @@ helm install myinfluxdb influxdata/influxdb2
 ```
 kubectl apply -f ./arris-stats-deployment.yaml
 ```
+
+## Testing
+
+Spoof the SB8200 connection status page for testing
+
+```
+docker build -t augie/sb8200_spoof -f ./nginx-dockerfile .
+docker run -d -p 8080:80 augie/sb8200_spoof
+```
+
+Now you can test against the URL: http://localhost:8080/cmconnectionstatus.html
