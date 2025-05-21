@@ -30,6 +30,12 @@ kubectl apply -f ./arris-stats-deployment.yaml
 
 ## Testing
 
+Use the debug configuration to build an image with debugging enabled
+
+```
+docker build -t augie/arris_cable_modem_stats:debug -f arris-stats-debug-dockerfile .
+```
+
 Spoof the SB8200 connection status page for testing
 
 ```
