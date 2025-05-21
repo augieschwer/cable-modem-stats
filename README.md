@@ -34,6 +34,7 @@ Use the debug configuration to build an image with debugging enabled
 
 ```
 docker build -t augie/arris_cable_modem_stats:debug -f arris-stats-debug-dockerfile .
+docker run -d augie/arris_cable_modem_stats:debug
 ```
 
 Spoof the SB8200 connection status page for testing
