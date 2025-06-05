@@ -19,7 +19,18 @@ https://docs.influxdata.com/platform/install-and-deploy/deploying/kubernetes/
 
 ```
 helm repo add influxdata https://helm.influxdata.com/
+helm repo update
 helm install myinfluxdb influxdata/influxdb2
+```
+
+### Graphana
+
+https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
+
+```
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install mygraphana grafana/grafana
 ```
 
 ## Deploy
