@@ -47,6 +47,12 @@ export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/nam
 ```
 3. Login with the password from step 1 and the username: admin
 
+By default this will listen on `localhost` aka `127.0.0.1` to listen on all interfaces:
+
+```
+kubectl port-forward --address 0.0.0.0 service/mygraphana-grafana 3000:80
+```
+
 ## Deploy
 
 ```
