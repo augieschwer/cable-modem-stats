@@ -53,6 +53,32 @@ By default this will listen on `localhost` aka `127.0.0.1` to listen on all inte
 kubectl port-forward --address 0.0.0.0 service/mygraphana-grafana 3000:80
 ```
 
+#### Add InfluxDB as a Data Source
+
+Connections &rarr; Add new connection
+
+Name|Value
+---|---
+URL|http://myinfluxdb-influxdb2.default.svc.cluster.local
+
+##### Retrieve InfluxDB token
+
+```
+kubectl get secret myinfluxdb-influxdb2-auth -o jsonpath='{.data.admin-token}' | base64 -d
+```
+
+##### Custom HTTP headers
+
+Header|Value
+---|---
+Authorization|Token yOuRSuPeRSeCrEtToKeN
+
+##### InfluxDB Details
+
+Header|Value
+---|---
+Database|default
+
 ## Deploy
 
 ```
