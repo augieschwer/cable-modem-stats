@@ -23,6 +23,8 @@ helm repo update
 helm install myinfluxdb influxdata/influxdb2
 ```
 
+**TODO: add persistent data**
+
 ### Graphana
 
 https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
@@ -32,6 +34,8 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm install mygraphana grafana/grafana
 ```
+
+**TODO: add persistent data**
 
 #### Post-install notes
 
@@ -101,6 +105,12 @@ Now you can set the `admin` password, so you can get access via the web console:
 
 ```
 influx user password --name admin
+```
+
+Using the `v1` shell is also useful for querying the database:
+
+```
+influx v1 shell
 ```
 
 ## Deploy
