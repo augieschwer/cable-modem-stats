@@ -79,6 +79,30 @@ Header|Value
 ---|---
 Database|default
 
+##### Get access to the InfluxDB console
+
+```
+kubectl port-forward --address 0.0.0.0 service/myinfluxdb-influxdb2 3001:80
+```
+
+The web console is now available at `http://localhost:3001`; you'll need access to the container to set the admin password to access the web console:
+
+```
+kubectl exec -it myinfluxdb-influxdb2-0 -- /bin/bash
+```
+
+You'll need to set the `INFLUX_TOKEN` environment variable to the token above to use the CLI tool:
+
+```
+export INFLUX_TOKEN="yOuRSuPeRSeCrEtToKeN"
+```
+
+Now you can set the `admin` password, so you can get access via the web console:
+
+```
+influx user password --name admin
+```
+
 ## Deploy
 
 ```
